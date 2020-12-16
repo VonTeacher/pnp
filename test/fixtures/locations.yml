@@ -1,1 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bad_loc:
+  type:
+  name: Bad Location
+  description: This should not work
+  visited: false
+
+dungeon_loc:
+  type: Dungeon
+  name: Dungeon location
+  description: A dungeon location
+  visited: false
