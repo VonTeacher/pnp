@@ -25,4 +25,16 @@ class LocationTest < ActiveSupport::TestCase
     muni = Municipality.new(name: "Test")
     assert muni.save
   end
+
+  test "should scope visited locations" do
+    assert_equal 3, Location.visited.size
+  end
+
+  test "should scope visited dungeons" do
+    assert_equal dungeons(:known_dungeon), Location.dungeons.visited.first
+  end
+
+  test "should scope unvisited geographies" do
+    assert_equal geographies(:unknown_geography), Location.geographies.unvisited.first
+  end
 end
