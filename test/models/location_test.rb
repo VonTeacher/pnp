@@ -16,4 +16,13 @@ class LocationTest < ActiveSupport::TestCase
     location.name = nil
     assert_not location.save
   end
+
+  test "should allow similar names for different subclasses" do
+    dungeon = Dungeon.new(name: "Test")
+    assert dungeon.save
+    geo = Geography.new(name: "Test")
+    assert geo.save
+    muni = Municipality.new(name: "Test")
+    assert muni.save
+  end
 end
