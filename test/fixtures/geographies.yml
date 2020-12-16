@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+known_geography:
+  type: Geography
+  name: Known Geography
+  description: This geography is known to the party.
+  visited: true
+
+unknown_geography:
+  type: Geography
+  name: Unknown Geography
+  description: This geography is lost to time.
+  visited: false

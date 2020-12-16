@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+known_municipality:
+  type: Municipality
+  name: Known Municipality
+  description: This municipality is known to the party.
+  visited: true
+
+unknown_municipality:
+  type: Municipality
+  name: Unknown Municipality
+  description: This municipality is lost to time.
+  visited: false
