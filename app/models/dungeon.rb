@@ -1,0 +1,2 @@
+class Dungeon < Location
+end

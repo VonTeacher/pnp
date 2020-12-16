@@ -1,0 +1,2 @@
+class Geography < Location
+end
