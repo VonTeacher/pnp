@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 # https://github.com/heartcombo/simple_form
 gem 'simple_form'
-
+# https://github.com/norman/friendly_id
 gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do
