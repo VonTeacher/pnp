@@ -1,4 +1,5 @@
-<h1>Locations</h1>
+<% title(@page_title) %>
+<h1><%= @page_title %></h1>
 <% @locations.each do |location| %>
   <div>
     <%= link_to location.name, location %>
