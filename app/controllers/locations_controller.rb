@@ -11,4 +11,9 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
   end
+
+  def new
+    @page_title = "Add Location"
+    @location = Location.new
+  end
 end

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'locations', to: 'locations#index'
-  resources :locations, except: [:index]
+  resources :locations, only: [:index, :new]
   resources :dungeons, controller: 'locations', type: 'Dungeon', only: [:index, :show]
   resources :geographies, controller: 'locations', type: 'Geography', only: [:index, :show]
   resources :municipalities, controller: 'locations', type: 'Municipality', only: [:index, :show]
