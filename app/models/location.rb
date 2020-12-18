@@ -1,4 +1,7 @@
 class Location < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   # validations
   validates :type, presence: true
   validates :name, presence: true
