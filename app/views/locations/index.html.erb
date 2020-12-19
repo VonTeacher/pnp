@@ -1,8 +1,24 @@
 <% provide(:title, @page_title) %>
 
-<h1><%= @page_title %></h1>
-<% @locations.each do |location| %>
+<main>
+  <h1><%= @page_title %></h1>
+
   <div>
-    <%= link_to location.name, location %>
+    <ul>
+      <li style="display: inline-block;"><%= link_to 'View Locations', locations_path %></li>
+      <li style="display: inline-block;"><%= link_to 'View Dungeons', dungeons_path %></li>
+      <li style="display: inline-block;"><%= link_to 'View Geographies', geographies_path %></li>
+      <li style="display: inline-block;"><%= link_to 'View Municipalities', municipalities_path %></li>
+    </ul>
   </div>
-<% end %>
+
+  <div class="add">
+    <%= link_to '+ Add a New Location', new_location_path %>
+  </div>
+
+  <% @locations.each do |location| %>
+    <div>
+      <%= link_to location.name, location %>
+    </div>
+  <% end %>
+</main>

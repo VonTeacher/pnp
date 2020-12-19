@@ -18,4 +18,8 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get show via type route" do
+    get dungeon_url(dungeons(:unknown_dungeon))
+    assert_response :success
+  end
 end

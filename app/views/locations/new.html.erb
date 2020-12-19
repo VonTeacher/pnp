@@ -1,3 +1,16 @@
 <% provide(:title, "Add Location") %>
 
-<h1><%= @page_title %></h1>
+<main>
+  <h1><%= @page_title %></h1>
+
+  <%= simple_form_for @location do |f| %>
+    <%= f.input :type,
+      as: :radio_buttons,
+      collection: %w(Dungeon Geography Municipality) %>
+    <%= f.input :name %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :visited, as: :boolean %>
+
+    <%= f.submit "Save Location" %>
+  <% end %>
+</main>
