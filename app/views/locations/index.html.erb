@@ -1,4 +1,5 @@
-<% title(@page_title) %>
+<% provide(:title, @page_title) %>
+
 <h1><%= @page_title %></h1>
 <% @locations.each do |location| %>
   <div>

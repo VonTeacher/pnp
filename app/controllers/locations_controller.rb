@@ -1,10 +1,11 @@
 class LocationsController < ApplicationController
   def index
     @page_title = params[:type] ? params[:type].pluralize : "Locations"
-    @locations = if params[:type]
-      Location.where(type: params[:type])
+
+    if params[:type]
+      @locations = Location.where(type: params[:type])
     else
-      Location.all
+      @locations = Location.all
     end
   end
 
@@ -15,5 +16,21 @@ class LocationsController < ApplicationController
   def new
     @page_title = "Add Location"
     @location = Location.new
+  end
+
+  def create
+    @location = Location.new(location_params)
+
+    if @location.save
+      redirect_to @location
+    else
+      render "new"
+    end
+  end
+
+  private
+
+  def location_params
+    params.require(:location).permit(:type, :name, :description, :visited)
   end
 end
